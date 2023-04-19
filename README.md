@@ -39,6 +39,8 @@ cat ./example.sql | podman run -i --rm localhost/mysqltokenizer -i
 echo 'Tokenize, but left literals untouched:'
 cat ./example.sql | podman run -i --rm localhost/mysqltokenizer -l
 
-echo -e 'Tokenize, but left identifiers and literals untouched\n(i. e. just capitalize ther rest of tokens and remove line feeds and extra spaces):'
+echo 'Tokenize, but left identifiers and literals untouched'
+echo '(i. e. just capitalize ther rest of tokens and remove'
+echo 'line feeds and extra spaces):'
 cat ./example.sql | podman run -i --rm localhost/mysqltokenizer -il
 ```

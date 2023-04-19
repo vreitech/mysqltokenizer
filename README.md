@@ -10,7 +10,7 @@ Python Software Foundation [Python 3.11.3](https://www.python.org/downloads/rele
 
 Positive Technologies [MySQL grammar](https://github.com/antlr/grammars-v4/tree/307bc033bb787c43191a097f2a0356238b13e42d/sql/mysql/Positive-Technologies) using [MIT License](https://github.com/antlr/grammars-v4/blob/307bc033bb787c43191a097f2a0356238b13e42d/sql/mysql/Positive-Technologies/MySqlLexer.g4)
 
-## Usage
+## Building and using image from git repo
 
 Clone the repository to your environment using git:
 
@@ -42,4 +42,25 @@ cat ./example.sql | podman run -i --rm localhost/mysqltokenizer -l
 # Tokenize, but left identifiers and literals untouched
 # (i. e. just capitalize ther rest of tokens and remove line feeds and extra spaces)
 cat ./example.sql | podman run -i --rm localhost/mysqltokenizer -il
+```
+
+## Using image from Docker Hub
+
+Run mysqltokenizer contaner using podman and tokenize SQL query by 4 different ways:
+
+```
+echo 'select * from `some_table` order by desc limit 10;' > ./example.sql
+
+# Tokenize everything (identifiers and literals)
+cat ./example.sql | podman run -i --rm docker.io/vreitech/mysqltokenizer
+
+# Tokenize, but left identifiers untouched
+cat ./example.sql | podman run -i --rm docker.io/vreitech/mysqltokenizer -i
+
+# Tokenize, but left literals untouched
+cat ./example.sql | podman run -i --rm docker.io/vreitech/mysqltokenizer -l
+
+# Tokenize, but left identifiers and literals untouched
+# (i. e. just capitalize ther rest of tokens and remove line feeds and extra spaces)
+cat ./example.sql | podman run -i --rm docker.io/vreitech/mysqltokenizer -il
 ```

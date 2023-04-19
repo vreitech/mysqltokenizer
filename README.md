@@ -30,17 +30,16 @@ Run mysqltokenizer contaner using podman and tokenize SQL query by 4 different w
 ```
 echo 'select * from `some_table` order by desc limit 10;' > ./example.sql
 
-echo 'Tokenize everything (identifiers and literals):'
+# Tokenize everything (identifiers and literals)
 cat ./example.sql | podman run -i --rm localhost/mysqltokenizer
 
-echo 'Tokenize, but left identifiers untouched:'
+# Tokenize, but left identifiers untouched
 cat ./example.sql | podman run -i --rm localhost/mysqltokenizer -i
 
-echo 'Tokenize, but left literals untouched:'
+# Tokenize, but left literals untouched
 cat ./example.sql | podman run -i --rm localhost/mysqltokenizer -l
 
-echo 'Tokenize, but left identifiers and literals untouched'
-echo '(i. e. just capitalize ther rest of tokens and remove'
-echo 'line feeds and extra spaces):'
+# Tokenize, but left identifiers and literals untouched
+# (i. e. just capitalize ther rest of tokens and remove line feeds and extra spaces)
 cat ./example.sql | podman run -i --rm localhost/mysqltokenizer -il
 ```

@@ -1,6 +1,6 @@
 # mysqltokenizer
 
-Podman/Docker image for tokenize identifiers and/or literals of SQL queries (MySQL 8 dialect).
+Podman/Docker image for tokenize identifiers and/or literals of SQL queries (MySQL 8 dialect). This allows you to get a SQL query string with unique literals and/or unique identifiers replaced with tokens, which can be useful in cases of further analysis of the SQL query.
 
 ## Used dependencies
 

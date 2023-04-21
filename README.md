@@ -44,7 +44,7 @@ cat ./example.sql | podman run -i --rm localhost/mysqltokenizer -l
 cat ./example.sql | podman run -i --rm localhost/mysqltokenizer -il
 ```
 
-## Using image from Docker Hub
+## Using image from Docker Hub (or GitHub)
 
 Run mysqltokenizer contaner using podman and tokenize SQL query by 4 different ways:
 
@@ -64,3 +64,5 @@ cat ./example.sql | podman run -i --rm docker.io/vreitech/mysqltokenizer -l
 # (i. e. just capitalize ther rest of tokens and remove line feeds and extra spaces)
 cat ./example.sql | podman run -i --rm docker.io/vreitech/mysqltokenizer -il
 ```
+
+If you decided to pull the image from GitHub package storage you can replace `docker.io` onto `ghcr.io` in image URI.

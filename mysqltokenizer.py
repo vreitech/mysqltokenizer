@@ -73,6 +73,7 @@ def tokensNoSpaces(parser, tokens, identifiers, literals):
     output = re.sub(r'(?<=OR)(.+?OR)\1+', r' {:OR_LOOP:} OR', output)
     output = re.sub(r'(?<=AND)(.+?AND)\1+', r' {:AND_LOOP:} AND', output)
     output = re.sub(r'(?<=,)(.+?,)\1+', r' {:COMMA_LOOP:},', output)
+    output = re.sub(r'^(?:\s*use\s+[^;]+;)?(?:\s*set\s+timestamp\s*=[^;]+;)?\s*', r'', output, flags=re.IGNORECASE)
     output = output.rstrip()
     print(output)
 

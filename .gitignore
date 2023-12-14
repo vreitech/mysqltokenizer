@@ -1,3 +1,6 @@
+# Antlr4
+/.antlr
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
